@@ -31,11 +31,20 @@ public class InventoryUi : Singelton<InventoryUi>
         InitInventory();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            OpenCloseInventory();
+        }
+    }
+
     private void InitInventory()
     {
         Debug.Log($"Inventory Size: {Inventory.Instance.InventorySize}");
         Debug.Log($"Inventory Items Count: {Inventory.Instance.InventoryItems.Length}");
     
+        
         for (int i = 0; i < Inventory.Instance.InventorySize; i++)
         {
             InventorySlot slot = Instantiate(slotPrefab, container);
@@ -81,12 +90,18 @@ public class InventoryUi : Singelton<InventoryUi>
 
     public void ShowItemDescription(int index)
     {
-        if (index < 0 || index >= Inventory.Instance.InventoryItems.Length || Inventory.Instance.InventoryItems[index] == null) return;
-    
+        if (Inventory.Instance.InventoryItems[index] == null) return;
+        if (index < 0 || index >= Inventory.Instance.InventoryItems.Length || Inventory.Instance.InventoryItems[index] == null) 
+        {
+            descriptionPanel.SetActive(false); // Hide panel if invalid index or item
+            return;
+        }
+
+        InventoryItem selectedItem = Inventory.Instance.InventoryItems[index];
         descriptionPanel.SetActive(true);
-        itemIcon.sprite = Inventory.Instance.InventoryItems[index].Icon;
-        itemNameTMP.text = Inventory.Instance.InventoryItems[index].Name;
-        itemDescriptionTMP.text = Inventory.Instance.InventoryItems[index].Description;
+        itemIcon.sprite = selectedItem.Icon;
+        itemNameTMP.text = selectedItem.Name;
+        itemDescriptionTMP.text = selectedItem.Description;
 
     }
     
@@ -111,6 +126,7 @@ public class InventoryUi : Singelton<InventoryUi>
 
     private void SlotSelectedCallback(int slotIndex)
     {
+        if (slotIndex < 0 || slotIndex >= slotList.Count) return; // Check bounds
         CurrentSlot = slotList[slotIndex];
         ShowItemDescription(slotIndex);
     }
