@@ -11,8 +11,8 @@ public class ItempPickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
-        {
+        
+        if (!other.CompareTag("Player")) return;
             Debug.Log("Player contact");
             interactionBox.SetActive(true);
             
@@ -22,7 +22,7 @@ public class ItempPickUp : MonoBehaviour
                 Destroy(gameObject);
            
             
-        }
+     
     }
 
     private void OnTriggerExit(Collider other)
