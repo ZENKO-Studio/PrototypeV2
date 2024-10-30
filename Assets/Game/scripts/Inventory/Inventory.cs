@@ -1,14 +1,25 @@
 using System.Collections.Generic;
 using BayatGames.SaveGameFree;
 using UnityEngine;
+using UnityEngine.AI;
+using Yarn.Unity;
 
 public class Inventory : Singelton<Inventory>
-{
-       [Header("Config")] [SerializeField] private int inventorySize;
+{[Header("Config")]
+    [SerializeField] private int inventorySize;
     [SerializeField] private InventoryItem[] inventoryItems;
     [SerializeField] private GameContent _gameContent;
+    [SerializeField] private DialogueRunner dialogueRunner;
+    [SerializeField] private string itemName;
 
-    [Header("Testing")] public InventoryItem testItem;
+    [Header("References")]
+    [SerializeField] private NavMeshAgent playerAgent; // Reference to player's NavMeshAgent
+
+    [Header("Testing")]
+    public InventoryItem testItem;
+
+    private readonly Queue<string> dialogueQueue = new Queue<string>();
+    private bool isDialogueActive = false;
 
     public int InventorySize => inventorySize;
     public InventoryItem[] InventoryItems => inventoryItems;
@@ -20,8 +31,9 @@ public class Inventory : Singelton<Inventory>
         inventoryItems = new InventoryItem[inventorySize];
         VerifyItemsForDraw();
         LoadInventory();
-       // SaveGame.Delete(INVENTORY_KEY_DATA);
+        dialogueRunner.onDialogueComplete.AddListener(OnDialogueComplete);
     }
+    
 
     private void Update()
     {
@@ -35,6 +47,7 @@ public class Inventory : Singelton<Inventory>
     {
         if (item == null || quantity <= 0) return;
         List<int> itemIndexes = CheckItemStockIdexes(item.ID);
+
         if (item.IsStackable && itemIndexes.Count > 0)
         {
             foreach (int index in itemIndexes)
@@ -48,12 +61,14 @@ public class Inventory : Singelton<Inventory>
                         int dif = inventoryItems[index].Quantity - maxStack;
                         inventoryItems[index].Quantity = maxStack;
                         AddItem(item, dif);
+                        AudioManager.Instance.PlaySfx(33);
                     }
 
                     InventoryUi.Instance.DrawItem(inventoryItems[index], index);
-                    
                     SaveInventory();
-                    
+
+                    EnqueueDialogue(item.Name); // Queue dialogue
+
                     return;
                 }
             }
@@ -66,9 +81,41 @@ public class Inventory : Singelton<Inventory>
         {
             AddItem(item, remainingAmount);
         }
-        
+
         SaveInventory();
+
+        EnqueueDialogue(item.Name); // Queue dialogue
     }
+
+    private void EnqueueDialogue(string itemName)
+    {
+        dialogueQueue.Enqueue(itemName);
+        if (!isDialogueActive)
+        {
+            StartNextDialogue();
+        }
+    }
+
+    private void StartNextDialogue()
+    {
+        if (dialogueQueue.Count > 0)
+        {
+            isDialogueActive = true;
+            playerAgent.isStopped = true; // Stop player movement
+            itemName = dialogueQueue.Dequeue();
+            dialogueRunner.VariableStorage.SetValue("$itemName", itemName);
+            dialogueRunner.StartDialogue("addToInventory");
+        }
+    }
+
+// Called from Yarn Spinner when the dialogue ends
+    public void OnDialogueComplete()
+    {
+        isDialogueActive = false;
+        playerAgent.isStopped = false; // Resume player movement
+        StartNextDialogue();
+    }
+    
 
     public void UseItem(int index)
     {

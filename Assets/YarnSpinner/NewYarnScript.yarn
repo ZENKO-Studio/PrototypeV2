@@ -1,0 +1,18 @@
+﻿title: addToInventory
+tags:
+
+position: -277,-690
+node: addToInventory
+
+---
+<<declare $itemName = "">>
+    Player: "I just added a Item to my inventory."
+    <<if $itemName == "Journal">>
+        Player: "A Journal! This will be useful."
+    <<elseif $itemName == "Key">>
+        Player: "A new Key—just what I needed!"
+    <<else>>
+        Player: "This it might come in handy."
+    <<endif>>
+    <<stop>>
+===
