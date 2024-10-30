@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 7c858211a36e44c32b4803041033c786
+timeCreated: 1455437420
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/Space/Scripts/MobileOnly.cs
+  uploadId: 644379

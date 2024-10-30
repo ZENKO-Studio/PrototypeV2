@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 38c717a794b9f4e66802ee51e19eaf8a
+timeCreated: 1446965017
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/Space/Scripts/SpriteSwitcher.cs
+  uploadId: 644379

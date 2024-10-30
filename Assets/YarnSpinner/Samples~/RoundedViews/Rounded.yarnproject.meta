@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 541c33f5dcd3d402a93eebfd5d27318a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
+  useAddressableAssets: 0
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/RoundedViews/Rounded.yarnproject
+  uploadId: 644379

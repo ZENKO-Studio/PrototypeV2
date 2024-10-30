@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 3419b57eb638f44db88701b5b33b8af8
+timeCreated: 1446893929
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/Space/Scripts/NPC.cs
+  uploadId: 644379

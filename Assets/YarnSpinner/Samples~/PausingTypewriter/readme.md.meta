@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a718c0d80b9a94738adac8cc1db4b6b9
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/PausingTypewriter/readme.md
+  uploadId: 644379

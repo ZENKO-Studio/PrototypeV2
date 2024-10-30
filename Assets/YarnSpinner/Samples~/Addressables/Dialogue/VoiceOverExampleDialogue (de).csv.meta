@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eb9d8d8a260ba4f01aba01c3e85f0060
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/Addressables/Dialogue/VoiceOverExampleDialogue
+    (de).csv
+  uploadId: 644379

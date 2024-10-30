@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e1d4acf55c50c2943add2ee57ed9e7ce
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/3D/3DExampleScene.unity
+  uploadId: 644379

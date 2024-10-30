@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 22c9338f64478424d919c074ea5bcf48
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/PhoneChat/Prefabs/PhoneChatPrefab.prefab
+  uploadId: 644379

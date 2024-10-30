@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b235ca09ac4d04896a60d2631f83e094
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/Minimal Viable Dialogue System/Scripts/MinimalLineView.cs
+  uploadId: 644379

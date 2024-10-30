@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 37d5718aab2a24c498bd5a2adac4d792
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/Addressables/readme.md
+  uploadId: 644379

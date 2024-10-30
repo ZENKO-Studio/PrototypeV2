@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 141e0d5203fa75745894e9e4945e7743
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267061
+  packageName: Yarn Spinner for Unity
+  packageVersion: 2.4.2
+  assetPath: Assets/YarnSpinner/Samples~/VisualNovel/Visual Novel.unity
+  uploadId: 644379
