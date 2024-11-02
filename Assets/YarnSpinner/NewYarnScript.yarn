@@ -9,7 +9,7 @@ node: addToInventory
     Player: "I just added a Item to my inventory."
     <<if $itemName == "Journal">>
         Player: "A Journal! This will be useful."
-    <<elseif $itemName == "Key">>
+    <<elseif $itemName == "key">>
         Player: "A new Key—just what I needed!"
     <<else>>
         Player: "This it might come in handy."
